@@ -506,6 +506,7 @@ button {
 
   .auth__button {
     width: 100%;
+    padding: 18px 20px 10px;
   }
 
   .banner__text-block {
@@ -536,7 +537,7 @@ button {
   .menu {
     width: 100%;
     border-left: none;
-    border-top: 6px solid black;
+    border-top: 4px solid black;
   }
 
   .banner {
