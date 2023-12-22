@@ -331,12 +331,14 @@ button {
   justify-content: space-between;
 }
 
-.footer .logo {
+.footer__logo {
+  display: block;
+  padding: 20px 0px;
   width: 100%;
   align-self: center;
 }
 
-.footer .logo__name {
+.footer__logo-name {
   font-family: 'Rubic One', sans-serif;
   text-transform: uppercase;
   font-size: 26px;
