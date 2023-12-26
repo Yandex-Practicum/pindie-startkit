@@ -60,7 +60,9 @@ button {
 }
 
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 20px;
   justify-content: space-between;
   border-top: 4px solid black;
   border-bottom: 8px solid black;
@@ -72,6 +74,7 @@ button {
   padding: 20px 0px;
   width: 148px;
   min-width: 148px;
+  align-self: center;
 }
 
 .logo__image {
@@ -80,16 +83,22 @@ button {
 
 .menu {
   display: flex;
+  width: 90%;
   justify-content: space-between;
   border-left: 14px solid black;
+  justify-self: end;
 }
 
 .menu__list {
-  display: flex;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  width: 100%;
 }
 
 .menu__item {
   display: flex;
+  width: 100%;
 }
 
 .menu__link {
@@ -101,10 +110,8 @@ button {
   text-transform: uppercase;
   font-size: 30px;
   transition: background-color 0.3s ease-in-out;
-}
-
-.menu__item:not(:first-child) .menu__link {
-  border-left: 4px solid black;
+  width: 100%;
+  box-shadow: 4px 4px 0 black, -4px -4px 0 black, -4px 4px 0 black, 4px -4px 0 black;
 }
 
 .menu__link:hover {
@@ -137,7 +144,7 @@ button {
 }
 
 .banner {
-  padding: 40px 40px 112px;
+  padding: 112px 40px 112px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
@@ -145,13 +152,13 @@ button {
 
 .banner__title {
   font-size: 42px;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
   max-width: 708px;
 }
 
 .banner__text-block {
   line-height: 1.6;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
   padding-left: 80px;
   max-width: 630px;
   letter-spacing: 1.5;
@@ -169,10 +176,6 @@ button {
   margin-right: 40px;
   align-self: center;
   justify-self: center;
-}
-
-.list-section:not(:first-of-type) {
-  margin-top: 40px;
 }
 
 .list-section__title {
@@ -460,8 +463,17 @@ button {
   }
 }
 
+@media (width <= 1200px) {
+  .menu {
+    width: 100%;
+  }
+
+  .menu__list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
 @media (width <= 1024px) {
-  
   .banner {
     grid-template-columns: 1fr;
     padding: 80px 40px;
@@ -492,24 +504,18 @@ button {
 }
 
 @media (width <= 768px) {
+  .logo {
+    justify-self: center;
+  }
+
   .header {
-    align-items: center;
+    grid-template-columns: 1fr;
   }
+
   .menu {
-    flex-direction: column;
-  }
-
-  .menu__list {
-    flex-direction: column;
-  }
-
-  .menu__link {
-    width: 100%;
-  }
-
-  .menu__item:not(:first-child) .menu__link {
-    border-left: none;
     border-top: 4px solid black;
+    border-left: none;
+    flex-direction: column;
   }
 
   .auth__button {
@@ -538,15 +544,6 @@ button {
 }
 
 @media (width <= 650px) {
-  .header {
-    flex-direction: column;
-    gap: 20px;
-  }
-  .menu {
-    width: 100%;
-    border-left: none;
-    border-top: 4px solid black;
-  }
 
   .banner {
     padding: 80px 14px;
