@@ -210,19 +210,11 @@ button {
 .card-list__link {
   display: block;
   height: 100%;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .card-list__link:hover {
   background-color: black;
-}
-
-.card-list__link .card {
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.card-list__link:hover .card {
-  background-color: #FFFF00;
-  transform: translate(-8px, -8px);
 }
 
 .card {
@@ -230,6 +222,12 @@ button {
   display: flex;
   flex-direction: column;
   background-color: white;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  background-color: #FFFF00;
+  transform: translate(-8px, -8px);
 }
 
 .card__image {
@@ -244,6 +242,7 @@ button {
   padding: 16px 16px 35px;
   border: 4px solid black;
   flex-grow: 1;
+  display: grid;
 }
 
 .card__title {
@@ -256,6 +255,10 @@ button {
   line-height: 1.1;
   margin-bottom: 20px;
   font-size: 20px;
+}
+
+.card__info-container {
+  align-self: end;
 }
 
 .card__author {
