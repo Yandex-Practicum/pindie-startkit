@@ -318,6 +318,7 @@ button {
 .promo__image {
   align-self: end;
   justify-self: end;
+  width: 100%;
 }
 
 .promo__button {
