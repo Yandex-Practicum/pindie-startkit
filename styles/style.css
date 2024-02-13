@@ -35,6 +35,10 @@ a {
   color: inherit;
 }
 
+img {
+  max-width: 100%;
+}
+
 button {
   cursor: pointer;
   font-family: inherit;
